@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Students from "./Students";
 import Attendance from "./Attendance";
 import Percentage from "./Percentage";
+import { useNavigate } from "react-router-dom";
+
 import {
   FiUsers,
   FiCheckSquare,
@@ -18,6 +20,8 @@ function Dashboard() {
   const [teacherName, setTeacherName] = useState("Teacher");
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const navigate = useNavigate();
 
   const handleNavClick = (id) => {
     setActive(id);
@@ -45,7 +49,7 @@ function Dashboard() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location.href = "/login";
+    navigate("/login");
   };
 
   const navItems = [
