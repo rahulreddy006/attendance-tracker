@@ -36,7 +36,7 @@ export default function Login() {
       if (response.ok && data.success) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
-        setTimeout(() => navigate("/"), 300); // Redirect to dashboard
+        setTimeout(() => navigate("/dashboard"), 300); // Redirect to dashboard
       } else {
         setTimeout(() => toast.error(data.message || "Login failed"), 300);
       }
