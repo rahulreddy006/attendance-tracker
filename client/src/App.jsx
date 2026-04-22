@@ -30,6 +30,7 @@ export default function App() {
 
       <Routes>
         {/* If the URL is exactly /login, render the Login component */}
+         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
 
         {/* If the URL is exactly /signup, render the Signup component */}
@@ -44,6 +45,7 @@ export default function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
   );
