@@ -24,7 +24,7 @@ export default function Login() {
       // Simulate network delay for the progress bar effect
       setTimeout(() => setProgress(70), 200);
 
-      const response = await fetch("http://localhost:5000/teachers/login", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/teachers/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
